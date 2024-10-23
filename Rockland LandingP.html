@@ -8,113 +8,171 @@
         /* Paleta de colores neon y estilo general */
         body {
             margin: 0;
-            font-family: Arial, sans-serif;
+            font-family: 'Montserrat', sans-serif;
             background-color: black;
             color: white;
             overflow-x: hidden;
         }
-
+        nav {
+            background-color: #222;
+            padding: 15px;
+            text-align: center;
+        }
+        nav a {
+            color: #00ffff;
+            margin: 0 15px;
+            font-size: 1.5em;
+            text-decoration: none;
+        }
         .hero {
-            background: url('hero-image-placeholder.jpg') no-repeat center center/cover;
+            background: url('imagen1.jpg') no-repeat center center/cover;
             height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
+            flex-direction: column;
             text-align: center;
-            color: neon;
+            position: relative;
+            padding: 50px 20px;
         }
-
         .hero h1 {
-            font-size: 5em;
-            color: cyan;
-            text-shadow: 0 0 10px magenta;
+            font-size: 6em;
+            color: #00ffff;
+            text-shadow: 0 0 10px #ff00ff;
+            animation: glow 2s infinite;
         }
-
+        .hero p {
+            font-size: 2em;
+            color: #00ffff;
+            text-shadow: 0 0 5px #ff0000;
+            margin-top: -20px;
+        }
+        @keyframes glow {
+            0% { text-shadow: 0 0 10px #00ffff, 0 0 20px #ff00ff; }
+            50% { text-shadow: 0 0 20px #00ffff, 0 0 30px #ff00ff; }
+            100% { text-shadow: 0 0 10px #00ffff, 0 0 20px #ff00ff; }
+        }
         .section {
-            padding: 50px;
+            padding: 80px 20px;
             text-align: center;
         }
-
+        .section h2 {
+            font-size: 3em;
+            color: #00ffff;
+            text-shadow: 0 0 10px #ff00ff;
+            margin-bottom: 40px;
+        }
         .section img {
             width: 100%;
             max-width: 300px;
-            margin: 10px;
+            margin: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 255, 255, 0.5);
         }
-
-        .spotify-player {
-            margin: 50px 0;
+        .section .project-title {
+            font-size: 1.5em;
+            margin-top: 10px;
+            color: #00ffff;
+            text-shadow: 0 0 5px #ff00ff;
         }
-
+        .section .project-description {
+            font-size: 1em;
+            font-style: italic;
+            color: #aaa;
+            margin-bottom: 30px;
+        }
+        .spotify-player iframe {
+            border: none;
+            box-shadow: 0 0 20px rgba(0, 255, 255, 0.5);
+        }
         .contact {
             background: #111;
-            padding: 20px;
+            padding: 50px;
         }
-
         .contact a {
-            color: neon;
+            color: #00ffff;
             margin: 0 10px;
             font-size: 1.5em;
+            text-decoration: none;
         }
-
         .footer {
             background-color: #222;
             color: #ccc;
             text-align: center;
-            padding: 20px;
+            padding: 40px 20px;
         }
     </style>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
+    <!-- Navigation Menu -->
+    <nav>
+        <a href="#hero">Inicio</a>
+        <a href="#music">Nuestra Música</a>
+        <a href="#projects">Proyectos</a>
+        <a href="#collabs">Colaboraciones</a>
+        <a href="#motivations">Motivaciones</a>
+        <a href="#contact">Contáctanos</a>
+    </nav>
 
     <!-- Hero Section -->
-    <section class="hero">
-        <h1>RockB</h1>
-        <p>Donde el caos se convierte en m?sica</p>
+    <section id="hero" class="hero">
+        <h1>RockLand</h1>
+        <p>Donde el Caos se convierte en música</p>
     </section>
 
-    <!-- Secci?n de M?sica -->
-    <section class="section spotify-player">
-        <h2>Nuestra M?sica</h2>
+    <!-- Sección de Música -->
+    <section id="music" class="section spotify-player">
+        <h2>Nuestra Música</h2>
         <!-- Insertar reproductor de Spotify -->
-        <iframe src="https://open.spotify.com/embed/album/xyz" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+        <iframe src="https://open.spotify.com/embed/album/xyz" width="300" height="380" allowtransparency="true" allow="encrypted-media"></iframe>
     </section>
 
-    <!-- Galer?a de Proyectos -->
-    <section class="section">
+    <!-- Galería de Proyectos -->
+    <section id="projects" class="section">
         <h2>Proyectos</h2>
-        <img src="project-placeholder1.jpg" alt="Proyecto 1">
-        <img src="project-placeholder2.jpg" alt="Proyecto 2">
-        <img src="project-placeholder3.jpg" alt="Proyecto 3">
-        <img src="project-placeholder4.jpg" alt="Proyecto 4">
-        <img src="project-placeholder5.jpg" alt="Proyecto 5">
-        <img src="project-placeholder6.jpg" alt="Proyecto 6">
+        <div class="project">
+            <img src="proyecto1.png" alt="Proyecto 1">
+            <div class="project-title">Proyecto 1</div>
+            <div class="project-description">"Los Sonidos Por La Luz"</div>
+        </div>
+        <div class="project">
+            <img src="proyecto2.jpg" alt="Proyecto 2">
+            <div class="project-title">Proyecto 2</div>
+            <div class="project-description">"Nobody"</div>
+        </div>
+        <div class="project">
+            <img src="proyecto3.jpg" alt="Proyecto 3">
+            <div class="project-title">Proyecto 3</div>
+            <div class="project-description">"Mente de Oro"</div>
+        </div>
     </section>
 
     <!-- Colaboraciones -->
-    <section class="section">
+    <section id="collabs" class="section">
         <h2>Colaboraciones</h2>
-        <img src="collab-placeholder1.jpg" alt="Colaboraci?n 1">
-        <img src="collab-placeholder2.jpg" alt="Colaboraci?n 2">
-        <img src="collab-placeholder3.jpg" alt="Colaboraci?n 3">
-        <img src="collab-placeholder4.jpg" alt="Colaboraci?n 4">
-        <img src="collab-placeholder5.jpg" alt="Colaboraci?n 5">
-        <img src="collab-placeholder6.jpg" alt="Colaboraci?n 6">
+        <img src="collab-placeholder1.jpg" alt="Colaboración 1">
+        <img src="collab-placeholder2.jpg" alt="Colaboración 2">
+        <img src="collab-placeholder3.jpg" alt="Colaboración 3">
+        <img src="collab-placeholder4.jpg" alt="Colaboración 4">
+        <img src="collab-placeholder5.jpg" alt="Colaboración 5">
+        <img src="collab-placeholder6.jpg" alt="Colaboración 6">
     </section>
 
     <!-- Motivaciones -->
-    <section class="section">
+    <section id="motivations" class="section">
         <h2>Motivaciones</h2>
-        <p>"El caos es el preludio de la creaci?n"</p>
-        <p>"El sonido es nuestra revoluci?n"</p>
-        <p>"Vive r?pido, crea m?s r?pido"</p>
+        <p>"El caos es el preludio de la creación"</p>
+        <p>"El sonido es 
+        <p>"Vive rápido, crea más rápido"</p>
     </section>
 
     <!-- Contacto -->
-    <section class="section contact">
-        <h2>Cont?ctanos</h2>
+    <section id="contact" class="section contact">
+        <h2>Contáctanos</h2>
         <p>Email: contacto@rockland.com</p>
         <p>
-            S?guenos en:
+            Síguenos en:
             <a href="https://instagram.com" target="_blank">Instagram</a> |
             <a href="https://tiktok.com" target="_blank">TikTok</a> |
             <a href="https://facebook.com" target="_blank">Facebook</a>
@@ -125,6 +183,5 @@
     <footer class="footer">
         <p>&copy; 2024 RockLand. Todos los derechos reservados.</p>
     </footer>
-
 </body>
 </html>
